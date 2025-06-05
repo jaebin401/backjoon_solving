@@ -6,13 +6,13 @@ int main()
     int n{};
     std::cin >> n;
     
-    bool exists[26]{};
     bool groupword = true;
     int count{0};
     
     while(n--)
     {
         groupword = true;
+        bool exists[26]{};
         std::string s;
         std::cin >> s;
         
