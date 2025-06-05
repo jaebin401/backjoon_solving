@@ -8,10 +8,11 @@ int main()
     
     bool exists[26]{};
     bool groupword = true;
-    int count{};
+    int count{0};
     
     while(n--)
     {
+        groupword = true;
         std::string s;
         std::cin >> s;
         
@@ -30,15 +31,15 @@ int main()
                 
                 else
                 {
+                    groupword = true;
                     exists[cG-'a'] = true;
                     cG = s[i];
                 }
             }
         }
-        if (groupword == true) { count++; }    
+        if (groupword == true) { count++; }
+        
     }
-    
     std::cout << count <<"\n";
-    
     return 0;
 }
