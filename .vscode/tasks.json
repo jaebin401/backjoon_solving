@@ -8,7 +8,7 @@
                 "-fdiagnostics-color=always",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
+                "/Users/mac/Desktop/algorithm solving/백준 단계별로 풀기/build/${fileBasenameNoExtension}",
                 "--std=c++17",
             ],
             "options": {
