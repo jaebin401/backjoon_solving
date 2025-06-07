@@ -5,7 +5,7 @@ int main()
 {
     
     int element{};
-    int max{}, Row{}, Col{};
+    int max{-1}, Row{}, Col{};
 
     for (int row{}; row < 9; row++)
     {
