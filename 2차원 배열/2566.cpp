@@ -30,7 +30,8 @@ int main()
         }
     }
     
-    std::cout << max << "\n" << Row << " " << Col;
+    std::cout << max << "\n";
+    std::cout << Row << " " << Col;
     
     return 0;
     
