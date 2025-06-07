@@ -15,8 +15,7 @@ int main()
         }
     }
     
-    int max{};
-    int Row, Col;
+    int max{}, Row{}, Col{};
     for (int row{}; row < N; row++)
     {
         for (int col{}; col < M; col++)
@@ -24,14 +23,14 @@ int main()
             if (max < m[row][col])
             {
                 max = m[row][col];
-                Row = row;
-                Col = col;
+                Row = row+1;
+                Col = col+1;
             }
             else { continue; }
         }
     }
     
-    std::cout << max << "\n" << Row+1 << " " << Col+1;
+    std::cout << max << "\n" << Row << " " << Col;
     
     return 0;
     
