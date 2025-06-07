@@ -29,6 +29,8 @@ float GradeCal(int n, std::string &grade)
     }
     
     else if (grade[0] == 'F') return 0.0;
+
+    return 0.0;
 }
 
 int main()
