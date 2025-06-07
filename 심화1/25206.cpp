@@ -1,18 +1,34 @@
 #include <iostream>
 #include <vector>
-#define cycle 20
+//#define cycle 20
 
-float GradeCal(int n, string &grade)
+float GradeCal(int n, std::string &grade)
 {
-    if (string == 'A+') return n*4.5;
-    else if (string == 'A0') return n*4.0;
-    else if (string == 'B+') return n*3.5;
-    else if (string == 'B0') return n*3.0;
-    else if (string == 'C+') return n*2.5;
-    else if (string == 'C0') return n*2.0;
-    else if (string == 'D+') return n*1.5;
-    else if (string == 'D0') return n*1.0;
-    else if (string == 'F') return 0;
+    if (grade[0] == 'A') 
+    {
+        if (grade[1] == '+') return n*4.5;
+        else return n*4.0;
+    }
+    
+    else if (grade[0] == 'B')
+    {
+        if (grade[1] == '+') return n*3.5;
+        else return n*3.0;
+    }
+
+    else if (grade[0] == 'C')
+    {
+        if (grade[1] == '+') return n*2.5;
+        else return n*2.0;
+    }
+
+    else if (grade[0] == 'D')
+    {
+        if (grade[1] == '+') return n*1.5;
+        else return n*1.0;
+    }
+    
+    else if (grade[0] == 'F') return 0.0;
 }
 
 int main()
@@ -20,6 +36,7 @@ int main()
     int total{};
     double totalGrade{};
     
+    int cycle = 20;
     while(cycle--)
     {
         std::string s, grade;
