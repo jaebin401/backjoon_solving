@@ -30,8 +30,9 @@ int main()
     {
         for (int j{}; j<col; j++)
         {
-            std::cout << m[i][j];
+            std::cout << m[i][j] << " ";
         }
+        std::cout << "\n";
     }
     
     return 0;
