@@ -1,54 +1,39 @@
 #include <iostream>
-#include <vector>
-//#define cycle 20
+#include <iomanip>
+#include <string>
+using namespace std;
 
-float GradeCal(int n, std::string &grade)
-{
-    if (grade[0] == 'A') 
-    {
-        if (grade[1] == '+') return n*4.5;
-        else return n*4.0;
-    }
-    
-    else if (grade[0] == 'B')
-    {
-        if (grade[1] == '+') return n*3.5;
-        else return n*3.0;
-    }
-
-    else if (grade[0] == 'C')
-    {
-        if (grade[1] == '+') return n*2.5;
-        else return n*2.0;
-    }
-
-    else if (grade[0] == 'D')
-    {
-        if (grade[1] == '+') return n*1.5;
-        else return n*1.0;
-    }
-    
-    else if (grade[0] == 'F') return 0.0;
-
-    return 0.0;
+double GradeCal(double credits, const string &grade) {
+    if (grade == "A+") return credits * 4.5;
+    if (grade == "A0") return credits * 4.0;
+    if (grade == "B+") return credits * 3.5;
+    if (grade == "B0") return credits * 3.0;
+    if (grade == "C+") return credits * 2.5;
+    if (grade == "C0") return credits * 2.0;
+    if (grade == "D+") return credits * 1.5;
+    if (grade == "D0") return credits * 1.0;
+    if (grade == "F")  return 0.0;
+    return 0.0;  // P는 여기서 처리하지 않으니 main에서 continue
 }
 
-int main()
-{
-    int total{};
-    double totalGrade{};
-    
-    int cycle = 20;
-    while(cycle--)
-    {
-        std::string s, grade;
-        int n;
-        std::cin >> s >> n >> grade;
-        total += n;
-        totalGrade += GradeCal(n, grade);
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    double totalCredits = 0.0;
+    double totalScore   = 0.0;
+
+    for (int i = 0; i < 20; ++i) {
+        string course, grade;
+        double credits;
+        cin >> course >> credits >> grade;
+        if (grade == "P") continue;   // Pass 과목은 건너뛰기
+
+        totalCredits += credits;
+        totalScore   += GradeCal(credits, grade);
     }
-    
-    std::cout << totalGrade/total << "\n";
+
+    double gpa = totalScore / totalCredits;
+    cout << fixed << setprecision(6) << gpa << "\n";
     return 0;
-    
 }
