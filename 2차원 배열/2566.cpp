@@ -3,8 +3,7 @@
 
 int main()
 {
-    int N, M;
-    std::cin >> N >> M;
+    int N{9}, M{9};
     
     std::vector<std::vector<int>> m(N, std::vector<int>(M, 0));
     
@@ -32,7 +31,7 @@ int main()
         }
     }
     
-    std::cout << max << "\n" << Row << " " << Col;
+    std::cout << max << "\n" << Row+1 << " " << Col+1;
     
     return 0;
     
