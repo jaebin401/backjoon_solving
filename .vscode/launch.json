@@ -8,7 +8,7 @@
             "name": "Debug",
             "type": "lldb",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}.o",
+            "program": "\"/Users/mac/Desktop/algorithm solving/백준 단계별로 풀기/build/${fileBasenameNoExtension}\"",
             "args": [
                 "Hello",
                 "World"
