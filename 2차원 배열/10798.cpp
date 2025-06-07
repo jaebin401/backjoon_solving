@@ -1,27 +1,12 @@
 #include <iostream>
-#include <vector>
 #include <string>
+using namespace std;
 
-int main()
-{
-    std::vector<std::string> m(5);
-    int maxLen{};
-    for(int i{}; i<5; i++)
+int main() {
+    string arr[5];
+    for(int i = 0; i < 5; ++i) cin >> arr[i];
+    for (int i = 0; i < 15; ++i)
     {
-        std::cin >> m[i];
-        std::string s = m[i];
-        if(maxLen < s.length()) { maxLen = s.length(); }
+        for (int j = 0; j < 5; ++j) if (arr[j].length() > i) cout << arr[j][i];
     }
-
-    for (int i{}; i<maxLen; i++)
-    {
-        for (int j{}; j<5; j++)
-        {
-            if(m[j][i] == ' ') {continue;}
-            else { std::cout << m[j][i]; }
-        }
-    }
-    
-    return 0;
-        
 }
