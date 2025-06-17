@@ -9,7 +9,7 @@ struct coord
 
 int main()
 {
-    int area, squares, overlap;
+    int area, squares, overlap{};
     
     
     std::cin >> squares;
@@ -28,7 +28,7 @@ int main()
         
         for (int j{i+1}; j<squares; ++j)
         {
-            if (basicX > m[j].x && basicY > m[j].y)
+            if ((basicX > m[j].x && m[j].x > m[i].x) && (basicY > m[j].y && m[j].y > m[i].y))
             {
                 overlap += (m[j].x-m[i].x)*(m[j].y-m[i].x);
             }
