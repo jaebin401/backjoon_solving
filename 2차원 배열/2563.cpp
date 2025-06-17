@@ -1,22 +1,24 @@
 #include <iostream>
 #include <vector>
 
+struct coord
+{
+    int x;
+    int y;
+};
+
 int main()
 {
     int area, squares, overlap;
-    struct coord
-    {
-        int x;
-        int y;
-    };
+    
     
     std::cin >> squares;
-    std::vector<coord> m[squares];
+    std::vector<coord> m(squares);
     area = 100*squares;
     
     for (int i{}; i<squares; ++i)
     {
-        std::cin >> m[i].x >> m[y].y;
+        std::cin >> m[i].x >> m[i].y;
     }
     
     for (int i{}; i<squares; ++i)
