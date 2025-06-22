@@ -13,7 +13,7 @@ int main()
     int squares{};
     std::cin >> squares;
     
-    std::vector<point> p(squares, {0, 0});
+    std::vector<point> p(squares, {0, 0}); // 🚨 이 부분 매우 중요
     int Area {100*squares};
     
     // enter all the start point
