@@ -14,7 +14,7 @@ int main()
     std::cin >> squares;
     
     std::vector<point> p(squares, {0, 0}); // 🚨 이 부분 매우 중요
-    int Area {};
+    int Area{};
     int Xend{}, Yend{};
     
     // enter all the start point
@@ -25,10 +25,13 @@ int main()
         if(p[i].y > Yend) Yend = p[i].y;
     }
 
-    std::vector<std::vector<bool>> board(Xend, std::vector<bool>(Yend, 0));
+    Xend += 10;
+    Yend += 10;
+
+    std::vector<std::vector<bool>> board(Yend, std::vector<bool>(Xend, 0));
     for(point pt : p)
     {
-        int row{pt.y}, col{pt.x}, t{10}, T{10};
+        int row{pt.y-1}, col{pt.x-1}, t{10}, T{10};
         while(t--)
         {
             while(T--)
@@ -37,7 +40,8 @@ int main()
                 col++;
             }
             col = pt.x;
-            row--;
+            row++;
+            T = 10;
         }
     }
     
@@ -45,7 +49,7 @@ int main()
     {
         for (int j{}; j<Yend; j++)
         {
-            if (board[i][j] == true) Area++;
+            if (board[j][i] == true) Area++;
             else continue;
         }
     }
