@@ -13,7 +13,7 @@ int main()
     int squares{};
     std::cin >> squares;
     
-    std::vector<point> p(squares, 0);
+    std::vector<point> p(squares, {0, 0});
     int Area {100*squares};
     
     // enter all the start point
@@ -35,14 +35,14 @@ int main()
         int start{p[i].x}, end{p[i].x+10};
         for (int j{i+1}; j<squares && (p[j].x > start && p[j].x << end); j++)
         {
-            int Ystart{p[j].y}, Yend{p[j].y+10}
+            int Ystart{p[j].y}, Yend{p[j].y+10};
             int overlap{};
             
             if (p[i].y > Ystart && p[i].y < Yend)
                 overlap = (end-p[j].x)*(p[i].y-Ystart);
             
             Area -= overlap;
-            overlap{};    
+            overlap = 0;    
         }
     }
     
