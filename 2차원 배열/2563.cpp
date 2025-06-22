@@ -14,38 +14,41 @@ int main()
     std::cin >> squares;
     
     std::vector<point> p(squares, {0, 0}); // 🚨 이 부분 매우 중요
-    int Area {100*squares};
+    int Area {};
+    int Xend{}, Yend{};
     
     // enter all the start point
     for (int i{}; i<squares; ++i)
     {
         std::cin >> p[i].x >> p[i].y;
+        if(p[i].x > Xend) Xend = p[i].x;
+        if(p[i].y > Yend) Yend = p[i].y;
     }
-    
-    // sort it according to X value
-    std::sort(p.begin(), p.end(), 
-              [](const point& a, const point& b) 
-              {
-                return a.x < b.x;
-              }
-             );
-    
-    for(int i{}; i<squares; i++)
+
+    std::vector<std::vector<bool>> board(Xend, std::vector<bool>(Yend, 0));
+    for(point pt : p)
     {
-        int start{p[i].x}, end{p[i].x+10};
-        for (int j{i+1}; j<squares && (p[j].x > start && p[j].x << end); j++)
+        int row{pt.y}, col{pt.x}, t{10}, T{10};
+        while(t--)
         {
-            int Ystart{p[j].y}, Yend{p[j].y+10};
-            int overlap{};
-            
-            if (p[i].y > Ystart && p[i].y < Yend)
-                overlap = (end-p[j].x)*(p[i].y-Ystart);
-            
-            Area -= overlap;
-            overlap = 0;    
+            while(T--)
+            {
+                board[row][col] = true;
+                col++;
+            }
+            col = pt.x;
+            row--;
         }
     }
     
+    for (int i{}; i<Xend; i++)
+    {
+        for (int j{}; j<Yend; j++)
+        {
+            if (board[i][j] == true) Area++;
+            else continue;
+        }
+    }
     std::cout << Area <<"\n";
     
     return 0;
