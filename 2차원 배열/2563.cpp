@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
-struct coord
+struct point
 {
     int x;
     int y;
@@ -9,34 +10,43 @@ struct coord
 
 int main()
 {
-    int area, squares, overlap{};
-    
-    
+    int squares{};
     std::cin >> squares;
-    std::vector<coord> m(squares);
-    area = 100*squares;
     
+    std::vector<point> p(squares, 0);
+    int Area {100*squares};
+    
+    // enter all the start point
     for (int i{}; i<squares; ++i)
     {
-        std::cin >> m[i].x >> m[i].y;
+        std::cin >> p[i].x >> p[i].y;
     }
     
-    for (int i{}; i<squares; ++i)
+    // sort it according to X value
+    std::sort(p.begin(), p.end(), 
+              [](const point& a, const point& b) 
+              {
+                return a.x < b.x;
+              }
+             );
+    
+    for(int i{}; i<squares; i++)
     {
-        int basicX = m[i].x+10;
-        int basicY = m[i].y+10;
-        
-        for (int j{i+1}; j<squares; ++j)
+        int start{p[i].x}, end{p[i].x+10};
+        for (int j{i+1}; j<squares && (p[j].x > start && p[j].x << end); j++)
         {
-            if ((basicX > m[j].x && m[j].x > m[i].x) && (basicY > m[j].y && m[j].y > m[i].y))
-            {
-                overlap += (m[j].x-m[i].x)*(m[j].y-m[i].x);
-            }
+            int Ystart{p[j].y}, Yend{p[j].y+10}
+            int overlap{};
+            
+            if (p[i].y > Ystart && p[i].y < Yend)
+                overlap = (end-p[j].x)*(p[i].y-Ystart);
+            
+            Area -= overlap;
+            overlap{};    
         }
     }
     
-    area -= overlap;
-    std::cout << area << "\n";
+    std::cout << Area <<"\n";
     
     return 0;
 }
