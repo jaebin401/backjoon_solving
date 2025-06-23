@@ -4,10 +4,12 @@
 
 int main()
 {
-    std::string B;
+    std::string B{};
     int N{}, total{};
+
+    std::cin >> B >> N;
     
-    int len{B.length()};
+    int len = B.size();
     
     for (int i{}; i<len; ++i)
     {
