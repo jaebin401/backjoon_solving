@@ -14,10 +14,12 @@ int main()
     for (int i{}; i<len; ++i)
     {
         int num{};
-        if ((int)B[i] > 9) num = (int)(B[i]-'A'+10);
-        else num = (int)B[i];
+        if(std::isdigit(B[i]))
+            num = (int)(B[i]-'0');
+        else 
+            num = (int)(B[i]-'A'+10);
         
-        total += num*std::pow(N, i);
+        total += num*std::pow(N, len-i-1);
     }
     
     std::cout << total;
