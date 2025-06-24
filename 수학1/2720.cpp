@@ -14,17 +14,10 @@ int main()
         
         for (int i{}; i<4; i++)
         {
-            while(N>=unit[i])
-            {
-                arr[i]++;
-                N -= unit[i];
-            }
+            std::cout << N/unit[i] << " ";
+            N %= unit[i];
         }
-        
-        for (int num : arr)
-            std::cout << num << " ";
-        
-        std::cout << "\n";
+        std::cout <<"\n";
     }
     
     return 0;
