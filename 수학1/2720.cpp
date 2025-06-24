@@ -14,7 +14,7 @@ int main()
         
         for (int i{}; i<4; i++)
         {
-            while(N>unit[i])
+            while(N>=unit[i])
             {
                 arr[i]++;
                 N -= unit[i];
