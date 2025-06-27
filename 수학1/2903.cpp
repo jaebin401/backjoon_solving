@@ -5,7 +5,14 @@ int main()
     int N;
     std::cin >> N;
     
-    int line{(int)std::pow(2, N)+1};
+    int line{1};
+
+    while(N--)
+    {
+        line *= 2;
+    }
+
+    line++;
     
     std::cout << line*line;
     
