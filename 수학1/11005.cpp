@@ -9,11 +9,11 @@ int main()
     
     std::cin >> N >> B;
     
-    while(!N)
+    while(N>0)
     {
         num = N%B;
         N /= B;
-        if (num > '9') num-'0'+'A';
+        if (num > '9') num+'A';
         total.push_back(num);
     }
     
