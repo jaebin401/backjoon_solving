@@ -6,7 +6,7 @@ int main()
     
     std::cin >> A >> B >> V;
     
-    while(0)
+    while(1)
     {
         V -= A; day++;
         if (V <= 0) {break;}
