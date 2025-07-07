@@ -12,12 +12,11 @@ int main()
         
         if (a == 0 && b == 0) {break;}
 
-        if ( a == 0 || b == 0) cout << "neither"; 
-        else if ((a%b != 0) && (b%a != 0)) cout << "neither";  
-        else if ( a % b == 0 ) cout << "multiple";
-        else if ( b % a == 0 ) cout << "factor";
-        
-        
+        if ( a == 0 || b == 0) cout << "neither \n"; 
+        else if ((a%b != 0) && (b%a != 0)) cout << "neither \n";  
+        else if ( a % b == 0 ) cout << "multiple \n";
+        else if ( b % a == 0 ) cout << "factor \n";
+    
     }
     
     return 0; 
