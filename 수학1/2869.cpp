@@ -6,12 +6,8 @@ int main()
     
     std::cin >> A >> B >> V;
     
-    while(1) //
-    {
-        V -= A; day++;
-        if (V <= 0) {break;}
-        V += B;
-    }
+    if (V%(A-B) == 0) day = V/(A-B)-B;
+    else if (V%(A-B) != 0) day = V/(A-B)+1;
     
     std::cout << day;
     
