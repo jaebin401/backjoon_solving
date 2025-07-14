@@ -2,7 +2,8 @@
 
 int main()
 {
-    int t{}, cout{};
+    int t{}, count{};
+    std::cin >> t;
     
     while(t--)
     {
@@ -22,7 +23,7 @@ int main()
         
         for (int i{2}; i<num; ++i)
         {
-            if (num%i == 0) {break; isPrime = false;}
+            if (num%i == 0) {isPrime = false; break;} // break는 가장 나중에 위치해야 한다.
         }
         
         if (isPrime == true) {count++;}
