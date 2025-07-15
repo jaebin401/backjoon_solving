@@ -1,7 +1,7 @@
 #include <iostream>
 
-int nextPrime(int n)
-bool isPrime(int n)
+int nextPrime(int n);
+bool isPrime(int n);
     
 int main()
 {
@@ -13,7 +13,7 @@ int main()
             std::cout << n << "\n";
             num /= n;
         }
-        else (n = nextPrime(n);)
+        else {n = nextPrime(n);}
     }
     
     return 0;
